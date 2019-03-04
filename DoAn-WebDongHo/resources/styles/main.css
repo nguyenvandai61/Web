@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css?family=MyriadPro');
+
+
+
+/* body {
+    padding: 0; background: #787878;
+    color: #ffffff; 
+    font-family: 'Helvetica Neue', 'Lucida Grande', 
+    'Segoe UI', Arial, Helvetica, Verdana, sans-serif;
+    font-size: 0.875em; text-align: justify;
+} */
+
+.page-wrapper {
+    background: #ffffff;
+    align-items: center;
+}
+
+
+.page-top {
+    width: 100%;
+    margin: 0 auto; 
+    background-image: linear-gradient(-180deg,#f13d2d,#f63); 
+    border: 1px solid #ffffff;
+
+    font-family: MyriadPro, Helvetica,Arial,sans-serif;
+}
+
+
+.top-promo {
+    background-color:#c42517;
+}
+
+.nav-bar {
+    background-color: #4e1717;
+}
+
+.header-with-search {
+    width: 100vw;
+    display: block;
+    margin-top: 15px;
+}
+.header-with-search__logo-section {
+    width: 250px;
+    margin-left: 35px;
+    display: inline-block;
+}
+
+.header-with-search__logo-section img{
+    width: 200px;
+    display: inline-block;
+}
+
+.header-with-search__logo-section h1{
+    width: 200px;
+    display: inline-block;
+    position: absolute;
+
+    margin-top: 50px;
+}
+.header-with-search__search-section {
+    display: inline-block;
+    position: relative; 
+    top: -30px;
+    margin-left: 15px;
+}
+
+.header-with-search__search-section input {
+    width: 500px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.header-with-search__search-section button {
+    height: 50px;
+    border-radius: 10px;
+    
+}
+
+.header-link {
+    width: 400px; 
+    display: inline-block;
+    position: relative;
+    top: -25px;
+}
+
+.header-link button{
+    height: 50px;
+    font-family: Helvetica,Arial,sans-serif;
+    font-style: bold;
+    background: transparent;
+    color: #fff;
+}
+
+.header-link .item{
+    position: relative;
+    display: inline-block;
+    align-items: center;
+}
+
+.policies iframe{
+    width: 100vw;
+    border-width: 0px;
+}
+
+.menu-iframe {
+    width: 100vw;
+}

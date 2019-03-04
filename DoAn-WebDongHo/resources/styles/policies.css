@@ -1,0 +1,23 @@
+
+
+.chinh-sach-tinh {
+    width: 800vw;
+    display: block;
+    align-content: center;
+
+}
+
+ul {
+    padding-left: 0px;
+    align-content: center;
+}
+
+li {
+    padding: 10px; 
+    background-image: linear-gradient(30deg, #fd321f, orange);
+    display: inline-block;
+    border: 1px solid #fd321f;
+    
+    border-radius: 8px;
+    margin: 10px;
+}
