@@ -20,7 +20,7 @@ body {
 
 
 
-#top-container {
+header {
     margin: auto;
 
     width: 1440px;
@@ -30,11 +30,11 @@ body {
     font-family: "Poppins";
 }
 
-#nav-container {
+nav {
     height: 60px;
 }
 
-#try-it-btn {
+header>nav>#try-it-btn {
     float: right;
     width: 150px;
     margin-right: 25px;
@@ -49,11 +49,11 @@ body {
 }
 
 
-#top-content-container {
+header>#top-content-container {
     width: 100%;
 }
 
-#top-info-container {
+header>#top-content-container>#top-info-container {
     position: relative;
     top: -250px;
     display: inline-block;
@@ -72,7 +72,7 @@ body {
     color: var(--very-pale-cyan);
 }
 
-#mockup {
+header>#top-content-container>#mockup {
     display: inline-block;
     width: 960px;
 }
@@ -93,7 +93,7 @@ h2 {
     font-family: 'Open Sans';
 }
 
-.body-box {
+#body-container .body-box {
     width: 70%;
     margin: auto;
     margin-top: 50px;
@@ -127,7 +127,7 @@ h2 {
     display: inline-block;
 }
 
-#body-container #ready-to-build {
+#body-container>#ready-to-build {
     margin: auto;
     padding: 50px;
     width: 800px;
@@ -139,7 +139,7 @@ h2 {
     text-align: center;
 }
 
-#body-container #ready-to-build p {
+#body-container>#ready-to-build p {
     margin: auto;
 }
 
@@ -164,44 +164,41 @@ footer>#logo-footer path {
 }
 
 footer>#footer-content-container {
+    display: grid;
     color: white;
+    /* grid-template-columns: repeat(3, 1fr); */
+    grid-template-columns: 3fr 2fr 2fr;
 }
 
 
 footer>#footer-content-container>#info-box-container {
-    display: inline-block;
-    width: 30%;
 }
 
+footer>#footer-content-container>#info-box-container>.info-box{
+    display: grid;
+    grid-template-columns: 1fr 8fr;
+}
 footer>#footer-content-container>#info-box-container img {
-    display: inline-block;
-    width: 10%;
+    margin: auto;
+    width: 20px;
 }
 
 footer>#footer-content-container>#info-box-container p {
-    display: inline-block;
-    padding: 15px;
-    width: 70%;
+    width: 80%;
 }
 
-footer>#footer-content-container>#addition-info-container {
-
-    display: inline-block;
-    width: 25%;
-    transform: translateY(-190px);
-}
+/* footer>#footer-content-container>#addition-info-container {
+} */
 
 footer>#footer-content-container>#addition-info-container ul {
     columns: 2;
-
 }
 
 footer #social-network {
     display: inline-block;
-    transform: translateY(-170px);
 }
 
-footer #social-network .social-network-icon {
+footer #social-network>.social-network-icon {
     margin: 10px;
     width: 40px;
 }
