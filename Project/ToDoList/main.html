@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> To Do List</title>
+    <style>
+        @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {}
+
+        article {
+            width: 50vw;
+            max-width: 300px;
+            /* height: 80vh; */
+
+            margin: auto;
+            align-content: center;
+            border-radius: 5%;
+
+            background-image: linear-gradient(#ff9a9e, #fecfef);
+            border: solid rgb(247, 245, 245) 15px;
+        }
+
+        h1 {
+
+            border-radius: 5px;
+            margin: auto;
+
+            background-color: rgb(195, 221, 230);
+            box-shadow: 0px 0px 5px 5px rgb(204, 199, 199);
+
+            font-size: 3.5em;
+        }
+
+        ul li {
+            width: 90%;
+            background-color: #f5e3e4;
+            border-radius: 5px;
+
+            font-size: 2em;
+        }
+    </style>
+
+    <script>
+        var list = [
+            "1",
+            "2",
+            "3"
+        ]
+        const add = () => {
+            var content;
+            for (let i = 0; i < list.length; i++) {
+                content += "<li> <p>" + list[i] + "</p> </li>";
+            }
+            var ul = document.querySelector('ul');
+            ul.innerHTML = content;
+        }
+        window.onload = add;
+    </script>
+
+</head>
+
+<body>
+    <article>
+        <h1 onclick="add()"> To Do List </h1>
+        <ul>
+        </ul>
+
+        <form action="">
+            <input type="text" placeholder="I must do">
+            <button type="submit"> Submit </button>
+        </form>
+
+    </article>
+</body>
+
+</html>

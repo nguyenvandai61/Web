@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+:root {
+    --pink: hsl(322, 100%, 66%);
+
+    /* Neutral */
+    --very-pale-cyan: hsl(193, 100%, 96%);
+    --very-dark-cyan: hsl(192, 100%, 9%);
+    --grayish-blue: hsl(208, 11%, 55%);
+}
+
+html {
+    margin-top: 35px;
+}
+
+body {
+    background-color: var(--very-pale-cyan);
+}
+
+
+
+#top-container {
+    margin: auto;
+
+    width: 1440px;
+    background: url(/huddle-landing-page-945317-master/images/bg-hero-desktop.svg);
+
+
+    font-family: "Poppins";
+}
+
+#nav-container {
+    height: 60px;
+}
+
+#try-it-btn {
+    float: right;
+    width: 150px;
+    margin-right: 25px;
+
+    border-radius: 20px;
+    box-shadow: 3px 3px 22px 4px rgba(19, 18, 18, 0.705);
+    background-color: white;
+
+
+    text-align: center;
+    color: var(--very-dark-cyan);
+}
+
+
+#top-content-container {
+    width: 100%;
+}
+
+#top-info-container {
+    position: relative;
+    top: -250px;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 33%;
+}
+
+#get-started-box {
+    width: 40%;
+    padding: 5px;
+    padding-left: 15px;
+    border-radius: 20px;
+
+    background-color: var(--pink);
+    text-align: center;
+    color: var(--very-pale-cyan);
+}
+
+#mockup {
+    display: inline-block;
+    width: 960px;
+}
+
+h2 {
+    font-size: 40;
+    color: var(--very-dark-cyan);
+}
+
+#body-container {
+    margin: auto;
+    width: 1440px;
+    box-sizing: border-box;
+    background-color: white;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    font-family: 'Open Sans';
+}
+
+.body-box {
+    width: 70%;
+    margin: auto;
+    margin-top: 50px;
+    padding: 40px 40px;
+    border-radius: 15px;
+    display: flex;
+    box-shadow: 2px 2px 40px 0.5px var(--very-dark-cyan);
+    justify-content: space-around;
+}
+
+.text-body-box {
+    width: 50%;
+    position: relative;
+    padding-top: 6%;
+}
+
+.text-body-box>h3 {
+    font-size: 25pt;
+    color: var(--very-dark-cyan);
+}
+
+.text-body-box>p {
+    color: grey;
+}
+
+.body-img {
+    box-sizing: border-box;
+    width: 400px;
+    height: 400px;
+
+    display: inline-block;
+}
+
+#body-container #ready-to-build {
+    margin: auto;
+    padding: 50px;
+    width: 800px;
+    position: relative;
+    top: 140px;
+    border-radius: 20px;
+    z-index: 1;
+    background-color: white;
+    text-align: center;
+}
+
+#body-container #ready-to-build p {
+    margin: auto;
+}
+
+
+
+footer {
+    margin: auto;
+    width: 1440px;
+    box-sizing: border-box;
+    font-family: 'Open Sans';
+    background-color: var(--very-dark-cyan);
+    padding: 100px;
+
+}
+
+footer>#logo-footer {
+    margin-bottom: 45px;
+}
+
+footer>#logo-footer path {
+    fill: white;
+}
+
+footer>#footer-content-container {
+    color: white;
+}
+
+
+footer>#footer-content-container>#info-box-container {
+    display: inline-block;
+    width: 30%;
+}
+
+footer>#footer-content-container>#info-box-container img {
+    display: inline-block;
+    width: 10%;
+}
+
+footer>#footer-content-container>#info-box-container p {
+    display: inline-block;
+    padding: 15px;
+    width: 70%;
+}
+
+footer>#footer-content-container>#addition-info-container {
+
+    display: inline-block;
+    width: 25%;
+    transform: translateY(-190px);
+}
+
+footer>#footer-content-container>#addition-info-container ul {
+    columns: 2;
+
+}
+
+footer #social-network {
+    display: inline-block;
+    transform: translateY(-170px);
+}
+
+footer #social-network .social-network-icon {
+    margin: 10px;
+    width: 40px;
+}
+
+footer #copyright {
+    display: block;
+    text-align: right;
+}

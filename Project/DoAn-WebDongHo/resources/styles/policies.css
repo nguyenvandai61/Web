@@ -1,17 +1,16 @@
 
 
 .chinh-sach-tinh {
-    width: 800vw;
+    width: 100%;
     display: block;
-    align-content: center;
+    float: center;
 
 }
 
 ul {
     padding-left: 0px;
-    align-content: center;
+    text-align: center;
 }
-
 li {
     padding: 10px; 
     background-image: linear-gradient(30deg, #fd321f, orange);
