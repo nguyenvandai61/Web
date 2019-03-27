@@ -203,7 +203,7 @@ footer #social-network>.social-network-icon {
     width: 40px;
 }
 
-footer #copyright {
-    display: block;
+footer #copyright { 
+    grid-column: 1/4;
     text-align: right;
 }
