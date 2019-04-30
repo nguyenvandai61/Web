@@ -1,0 +1,17 @@
+{
+  "name": "express-website",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "*",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "nodemailer": "*",
+    "nodemon": "*",
+    "express-handlebars": "*"
+  }
+}
