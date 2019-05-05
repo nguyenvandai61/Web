@@ -1,3 +1,6 @@
+import React from 'react';
+import 'whatwg-fetch';
+import 'babel-polyfill';
 import IssueAdd from './IssueAdd.jsx'
 import IssueFilter from './IssueFilter.jsx'
 const IssueRow = (props) => (
