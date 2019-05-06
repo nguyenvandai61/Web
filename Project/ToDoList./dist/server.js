@@ -24,65 +24,66 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 _sourceMapSupport2.default.install();
 
-var app = (0, _express2.default)();
+const app = (0, _express2.default)();
 app.use(_express2.default.static('static'));
 app.use(_bodyParser2.default.json());
 
 if (process.env.NODE_ENV !== 'production') {
-  var webpack = require('webpack');
-  var webpackDevMiddleware = require('webpack-dev-middleware');
-  var webpackHotMiddleware = require('webpack-hot-middleware');
+  const webpack = require('webpack');
+  const webpackDevMiddleware = require('webpack-dev-middleware');
+  const webpackHotMiddleware = require('webpack-hot-middleware');
 
-  var config = require('../webpack.config');
+  const config = require('../webpack.config');
 
   config.entry.app.push('webpack-hot-middleware/client', 'webpack/hot/only-dev-server');
   config.plugins.push(new webpack.HotModuleReplacementPlugin());
 
-  var bundler = webpack(config);
+  const bundler = webpack(config);
   app.use(webpackDevMiddleware(bundler, { noInfo: true }));
   app.use(webpackHotMiddleware(bundler, { log: console.log }));
 }
 
-app.get('/api/issues', function (req, res) {
-  db.collection('issues').find().toArray().then(function (issues) {
-    var metadata = { total_count: issues.length };
+app.get('/api/issues', (req, res) => {
+  db.collection('issues').find().toArray().then(issues => {
+    const metadata = { total_count: issues.length };
     res.json({ _metadata: metadata, records: issues });
-  }).catch(function (error) {
+  }).catch(error => {
     console.log(error);
-    res.status(500).json({ message: 'Internal Server Error: ' + error });
+    res.status(500).json({ message: `Internal Server Error: ${error}` });
   });
 });
 
-app.post('/api/issues', function (req, res) {
-  var newIssue = req.body;
+app.post('/api/issues', (req, res) => {
+  const newIssue = req.body;
 
   newIssue.created = new Date();
   if (!newIssue.status) newIssue.status = 'New';
 
-  var err = _issue2.default.validateIssue(newIssue);
+  const err = _issue2.default.validateIssue(newIssue);
   if (err) {
-    res.status(422).json({ message: 'Invalid requrest: ' + err });
+    res.status(422).json({ message: `Invalid requrest: ${err}` });
     return;
   }
 
-  db.collection('issues').insertOne(newIssue).then(function (result) {
+  db.collection('issues').insertOne(newIssue).then(result => {
     db.collection('issues').find({ _id: result.insertedId }).limit(1).next();
-  }).then(function (newIssue) {
+  }).then(newIssue => {
     res.json(newIssue);
-  }).catch(function (error) {
+  }).catch(error => {
     console.log(error);
-    res.status(500).json({ message: 'Internal Server Error: ' + error });
+    res.status(500).json({ message: `Internal Server Error: ${error}` });
   });
 
   res.json(newIssue);
 });
 
-var db = void 0;
-_mongodb.MongoClient.connect('mongodb://localhost:27017/', { useNewUrlParser: true }).then(function (connection) {
+let db;
+_mongodb.MongoClient.connect('mongodb://localhost:27017/', { useNewUrlParser: true }).then(connection => {
   db = connection.db('issuetracker');
-  app.listen(3000, function () {
+  app.listen(3000, () => {
     console.log('App started on port 3000');
   });
-}).catch(function (error) {
+}).catch(error => {
   console.log('ERROR:', error);
 });
+//# sourceMappingURL=server.js.map
