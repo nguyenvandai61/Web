@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
     entry: {
         app: ['./src/app.jsx'],
-        vendor: ['react', 'react-dom', 'whatwg-fetch'],
+        vendor: ['react', 'react-dom', 'whatwg-fetch', 'babel-polyfill'],
     },
     output: {
         path: path.resolve(__dirname, 'static'),
