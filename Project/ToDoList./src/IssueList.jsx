@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import 'whatwg-fetch';
 import {Link} from 'react-router-dom';
+import qs from 'query-string';
 
 import IssueAdd from './IssueAdd.jsx';
 import IssueFilter from './IssueFilter.jsx';
@@ -48,6 +49,7 @@ function IssueTable(props) {
 
 IssueTable.propTypes = {
   issues: PropTypes.array.isRequired,
+  location: PropTypes.object.isRequired,
 };
 
 export default class IssueList extends React.Component {
@@ -61,9 +63,17 @@ export default class IssueList extends React.Component {
   componentDidMount() {
     this.loadData();
   }
+  componentDidUpdate(prevProps) {
+    const oldQuery = prevProps.location.query;
+    const newQuery = this.props.location.query;
+    console.log(oldQuery, newQuery);
+    if (newQuery === oldQuery) return;
+    this.loadData();
+  }
 
   loadData() {
-    fetch('/api/issues').then(response => {
+    const qr = qs.stringify(this.props.location.query);
+    fetch(`/api/issues?${qr}`).then(response => {
       if (response.ok) {
         response.json().then(data => {
           data.records.forEach(issue => {
@@ -122,3 +132,6 @@ export default class IssueList extends React.Component {
     );
   }
 }
+
+// IssueList.propTypes = {
+// }

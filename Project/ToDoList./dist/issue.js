@@ -22,7 +22,6 @@ const issueFieldType = {
 };
 
 function cleanupIssue(issue) {
-  console.log(issue);
   const cleanedUpIssue = {};
   Object.keys(issue).forEach(field => {
     if (issueFieldType[field]) cleanedUpIssue[field] = issue[field];
@@ -31,7 +30,6 @@ function cleanupIssue(issue) {
 }
 
 function validateIssue(issue) {
-  console.log(issue);
   const errors = [];
 
   Object.keys(issueFieldType).forEach(field => {
