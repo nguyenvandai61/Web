@@ -26,6 +26,7 @@ function cleanupIssue(issue) {
 
 function validateIssue(issue) {
   const errors = [];
+
   Object.keys(issueFieldType).forEach(field => {
     if (issueFieldType[field] === 'required' && !issue[field]) {
       errors.push(`Missing mandatory field: ${field}`);

@@ -47,7 +47,7 @@ app.post('/api/issues', (req, res) => {
   if (!newIssue.status) {
     newIssue.status = 'New';
   }
-
+  console.log(newIssue);
   const err = _issue2.default.validateIssue(newIssue);
   if (err) {
     res.status(422).json({ message: `Invalid request: ${err}` });

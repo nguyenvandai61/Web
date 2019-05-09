@@ -3,7 +3,6 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
 const validIssueStatus = {
   New: true,
   Open: true,
@@ -23,23 +22,27 @@ const issueFieldType = {
 };
 
 function cleanupIssue(issue) {
+  console.log(issue);
   const cleanedUpIssue = {};
   Object.keys(issue).forEach(field => {
-    if (issueFieldType[field]) cleanedUpIssue[field] = issue.field;
+    if (issueFieldType[field]) cleanedUpIssue[field] = issue[field];
   });
   return cleanedUpIssue;
 }
 
 function validateIssue(issue) {
+  console.log(issue);
   const errors = [];
 
-  Object.keys[issueFieldType].forEach(field => {
+  Object.keys(issueFieldType).forEach(field => {
     if (issueFieldType[field] === 'required' && !issue[field]) {
-      errors.push(`${field} is required.`);
+      errors.push(`Missing mandatory field: ${field}`);
     }
   });
 
-  if (!validIssueStatus[issue.status]) errors.push(`${issue.status} is not a valid status.`);
+  if (!validIssueStatus[issue.status]) {
+    errors.push(`${issue.status} is not a valid status.`);
+  }
 
   return errors.length ? errors.join('; ') : null;
 }
